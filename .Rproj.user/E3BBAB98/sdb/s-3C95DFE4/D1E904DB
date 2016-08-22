@@ -1,0 +1,16 @@
+{
+    "contents" : "install.packages(\"rgdal\")\ninstall.packages(\"shinydashboard\")\ninstall.packages(\"leaflet\")\n\nlibrary(\"rgdal\")\nlayer <- rgdal::readOGR(\"data/aus_states\",\"STE11aAust\")\nplot(layer)\n\nlibrary(\"leaflet\")\nleaflet(layer) %>% addTiles() %>% \n  addPolygons(stroke=FALSE,fillOpacity=0.5,\n  color = ~colorQuantile(\"YlOrRd\", \n    as.numeric(layer$STATE_CODE))(as.numeric(layer$STATE_CODE))\n  )\n",
+    "created" : 1471862119632.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "682246918",
+    "id" : "D1E904DB",
+    "lastKnownWriteTime" : 1471861892,
+    "path" : "~/workspace/r-mapping-blog/main.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

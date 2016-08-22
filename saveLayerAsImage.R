@@ -1,0 +1,5 @@
+library("rgdal")
+library("rgeos")
+layer <- rgdal::readOGR(dsn="data/simple_states",layer="simple_states")
+save.image("data/shapes.RData")
+plot(layer)
